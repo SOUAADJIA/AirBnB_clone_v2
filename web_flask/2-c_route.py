@@ -11,7 +11,7 @@ Routes:
 You must use the option strict_slashes=False in your route definition
 """
 
-from flask import Flask, escape
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -31,7 +31,8 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     """Displays 'C' followed by the value of the text variable"""
-    return 'C {}'.format(escape(text).replace('_', ' '))
+    text_fix = f'{text}'.replace('_', ' ')
+    return f'C {text_fix}'
 
 
 if __name__ == '__main__':
