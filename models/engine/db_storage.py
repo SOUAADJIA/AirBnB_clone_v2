@@ -20,11 +20,11 @@ class DBStorage:
 
     def __init__(self):
         """Function Docs"""
-        hb_user = getenv("HBNB_MYSQL_USER")
-        hb_pwd = getenv("HBNB_MYSQL_PWD")
-        hb_host = getenv("HBNB_MYSQL_HOST")
-        hb_db = getenv("HBNB_MYSQL_DB")
-        hb_env = getenv("HBNB_ENV")
+        user = getenv("HBNB_MYSQL_USER")
+        pwd = getenv("HBNB_MYSQL_PWD")
+        host = getenv("HBNB_MYSQL_HOST")
+        db = getenv("HBNB_MYSQL_DB")
+        env_name = getenv("HBNB_ENV")
 
         self.__engine = create_engine(
             f"mysql+mysqldb://{hb_user}:{hb_pwd}@{hb_host}/{hb_db}",
